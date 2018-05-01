@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   /*
    ** Headers of the page
@@ -24,7 +26,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto'
+        href: 'https://fonts.googleapis.com/css?family=Hind:400,700'
       }
     ]
   },
@@ -40,4 +42,12 @@ module.exports = {
   css: [
     '~assets/main.scss'
   ],
+  build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        // '$': 'jquery',
+        '_': 'lodash'
+      })
+    ]
+  }
 }

@@ -11,5 +11,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
+.header {
+  height: 130px;
+}
 </style>
