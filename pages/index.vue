@@ -52,6 +52,8 @@ export default {
 
 .container {
   height: 100vh * 5;
+  background: url(/images/noise.png) repeat;
+  background-attachment: fixed;
 }
 .inner {
   height: 100vh;

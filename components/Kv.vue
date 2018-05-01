@@ -1,7 +1,23 @@
 <template>
   <div class="kv">
-    <div class="kv__left">
-      <div class="slogan">JOU<br/>HSUAN<br/>WU<br/>Portfolio</div>
+    <div class="kv__left" :style="'opacity:'+opacity">
+      <div class="slogan">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 440">
+          <defs>
+            <text id="text" font-size="105" stroke="#1c1c1c" stroke-width="1">
+              <tspan x="0" dy="1em">JOU</tspan>
+              <tspan x="0" dy="1em">HSUAN</tspan>
+              <tspan x="0" dy="1em">WU</tspan>
+              <tspan x="0" dy="1em">Portfolio</tspan>
+            </text>
+            <mask id="text_mask">
+              <use x="0" y="0" xlink:href="#text" opacity="1" fill="#ffffff" />
+            </mask>
+          </defs>
+          <use x="0" y="0" xlink:href="#text" fill="#1c1c1c" />
+          <rect mask="url(#text_mask)" fill="#fff" x="0" :y="sloganMask" width="500" height="440" />
+        </svg>
+      </div>
       <ul class="menu">
         <li>#design</li>
         <li>#plan</li>
@@ -22,11 +38,48 @@ export default {
   props: ["progress"],
   data() {
     return {
+      sloganStart: 0,
+      sloganEnd: 0.25,
       videoStart: 0.2,
-      videoEnd: 0.5
+      videoEnd: 0.5,
+      opacityStart: 0.15,
+      opacityEnd: 0.3,
+      opacityMax: 1,
+      opacityMin: 0.2
     };
   },
   computed: {
+    opacity() {
+      let ratio;
+      if (this.progress < this.opacityStart) {
+        ratio = this.opacityMax;
+      } else if (this.progress > this.opacityEnd) {
+        ratio = this.opacityMin;
+      } else {
+        ratio =
+          (this.opacityMax -
+            (this.progress - this.opacityStart) /
+              (this.opacityEnd - this.opacityStart)) *
+            (this.opacityMax - this.opacityMin) +
+          this.opacityMin;
+      }
+      return ratio;
+    },
+    sloganMask() {
+      let ratio;
+      if (this.progress < this.sloganStart) {
+        ratio = 0;
+      } else if (this.progress > this.sloganEnd) {
+        ratio = 1;
+      } else {
+        ratio =
+          (this.progress - this.sloganStart) /
+          (this.sloganEnd - this.sloganStart) *
+          1;
+      }
+      return -ratio * 440;
+      return;
+    },
     rightStyle() {
       let ratio;
       if (this.progress < this.videoStart) {
@@ -51,11 +104,16 @@ export default {
   font-size: 105px;
   font-weight: bold;
   line-height: 1;
+  svg {
+    width: 50%;
+  }
 }
 
 .menu {
-  margin-top: 60px;
-  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
   padding: 0;
   li {
     font-size: 20px;
@@ -65,6 +123,7 @@ export default {
 }
 .kv {
   position: relative;
+  height: 90vh;
   @include clearfix;
   &__left {
     position: relative;
@@ -75,7 +134,8 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    width: 65%;
+    width: 70%;
+    overflow: hidden;
   }
 
   &__video {
