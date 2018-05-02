@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio" :style="translateY">
-    <div class="portfolio__col" v-for="(group, index) in projects" :key="index">
-      <div v-for="(project, index) in group" :key="index" class="portfolio__link">
+    <div class="portfolio__col" v-for="(group, index) in projects" :key="index" :style="colStyle[index]">
+      <div v-for="(project, index) in group" :key="index" class="portfolio__link" :style="skewAngle">
         <nuxt-link to="/"><img :src="project.img" alt=""></nuxt-link>
       </div>
       <div v-if="index == projects.length -1">
@@ -25,7 +25,9 @@ export default {
   data() {
     return {
       startPoint: 0.4,
-      endPoint: 1
+      endPoint: 1,
+      prev: 0,
+      next: 0
     };
   },
   computed: {
@@ -41,7 +43,35 @@ export default {
           (this.endPoint - this.startPoint) *
           100;
       }
+      this.prev = ratio;
+      clearTimeout(this.timer);
+      const a = this;
+      this.timer = setTimeout(function() {
+        a.next = a.prev;
+      }, 50);
       return { transform: "translateY(-" + ratio + "%)" };
+    },
+    colStyle() {
+      return [
+        { transform: "translateY(" + this.prev * 0.8 + "px)" },
+        { transform: "translateY(" + this.prev * 2.5 + "px)" },
+        { transform: "translateY(" + this.prev * 1.5 + "px)" }
+      ];
+    },
+    skewAngle() {
+      let diff = this.next - this.prev;
+      if (diff >= 20) {
+        diff = 20;
+      } else if (diff <= -20) {
+        diff = -20;
+      } else {
+        diff = diff;
+      }
+      return {
+        transform: "skewY(" + diff * 0.25 + "deg)",
+        "-webkit-filter": " blur(" + Math.abs(diff) / 10 + "px)",
+        filter: " blur(" + Math.abs(diff) / 10 + "px)"
+      };
     },
     projects() {
       return [
@@ -59,6 +89,7 @@ export default {
 .portfolio {
   position: relative;
   z-index: 99999;
+  padding-bottom: 60px;
   @include clearfix;
   &__col {
     float: left;
@@ -67,16 +98,13 @@ export default {
     &:first-child {
       margin-left: 0;
     }
-    &:nth-child(2n + 1) {
-      padding-top: 50px;
-    }
-
     img {
       width: 100%;
     }
   }
   &__link {
     margin-bottom: 40px;
+    transition: filter 0.1s linear, transform 0.1s linear;
     & > a {
       display: block;
       line-height: 0;
