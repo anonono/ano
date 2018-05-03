@@ -104,6 +104,8 @@ export default {
   font-size: 105px;
   font-weight: bold;
   line-height: 1;
+  position: relative;
+  top: -30px;
   svg {
     width: 50%;
   }

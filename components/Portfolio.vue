@@ -62,7 +62,6 @@ export default {
       let diff = this.next - this.prev,
         angle,
         blur;
-      console.log(diff);
       if (diff >= 10) {
         angle = 5;
         blur = 3;

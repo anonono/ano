@@ -1,10 +1,9 @@
 <template>
   <section class="container">
     <div class="inner">
-      <Header :progress="progress"></Header>
       <div class="wrap">
-        <Kv :progress="progress"></Kv>
-        <Portfolio :progress="progress"></Portfolio>
+        <Header></Header>
+
       </div>
     </div>
   </section>
@@ -12,21 +11,15 @@
 
 <script>
 import Header from "~/components/Header.vue";
-import Kv from "~/components/Kv.vue";
-import Portfolio from "~/components/Portfolio.vue";
 
 import axios from "axios";
 
 export default {
   components: {
-    Header,
-    Kv,
-    Portfolio
+    Header
   },
   data() {
-    return {
-      progress: 0
-    };
+    return {};
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
