@@ -59,18 +59,24 @@ export default {
       ];
     },
     skewAngle() {
-      let diff = this.next - this.prev;
-      if (diff >= 20) {
-        diff = 20;
+      let diff = this.next - this.prev,
+        angle,
+        blur;
+      console.log(diff);
+      if (diff >= 10) {
+        angle = 5;
+        blur = 3;
       } else if (diff <= -20) {
-        diff = -20;
+        angle = -5;
+        blur = 3;
       } else {
-        diff = diff;
+        angle = 0;
+        blur = 0;
       }
       return {
-        transform: "skewY(" + diff * 0.25 + "deg)",
-        "-webkit-filter": " blur(" + Math.abs(diff) / 10 + "px)",
-        filter: " blur(" + Math.abs(diff) / 10 + "px)"
+        transform: "skewY(" + angle + "deg)",
+        "-webkit-filter": " blur(" + blur + "px)",
+        filter: " blur(" + blur + "px)"
       };
     },
     projects() {
@@ -104,7 +110,7 @@ export default {
   }
   &__link {
     margin-bottom: 40px;
-    transition: filter 0.1s linear, transform 0.1s linear;
+    transition: filter 0.05s linear, transform 0.05s linear;
     & > a {
       display: block;
       line-height: 0;
