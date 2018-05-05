@@ -94,7 +94,7 @@ export default {
 .portfolio {
   position: relative;
   z-index: 99999;
-  padding-bottom: 60px;
+  padding-bottom: 300px;
   @include clearfix;
   &__col {
     float: left;
