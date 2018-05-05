@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Hind:400,700'
+        href: 'https://fonts.googleapis.com/css?family=Hind:400,600'
       }
     ]
   },

@@ -99,17 +99,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../assets/common";
-
-.slogan {
-  font-size: 105px;
-  font-weight: bold;
-  line-height: 1;
-  position: relative;
-  top: -30px;
-  svg {
-    width: 50%;
-  }
-}
+@include slogan;
 
 .menu {
   position: absolute;
@@ -130,6 +120,7 @@ export default {
   &__left {
     position: relative;
     z-index: 1;
+    width: 440px;
   }
 
   &__right {

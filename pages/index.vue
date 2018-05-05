@@ -42,13 +42,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/common";
-
-.wrap {
-  max-width: 960px;
-  margin: auto;
-}
 
 .container {
   height: 100vh * 5;
@@ -62,3 +57,4 @@ export default {
   width: 100%;
 }
 </style>
+

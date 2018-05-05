@@ -5,3 +5,22 @@
         clear: both;
     }
 }
+
+@mixin slogan() {
+    .slogan {
+        font-size: 105px;
+        font-weight: bold;
+        line-height: 1;
+        position: relative;
+        top: -30px;
+        svg {
+            width: 100%;
+        }
+    }
+}
+
+.wrap {
+    max-width: 960px;
+    padding: 60px;
+    margin: auto;
+}
