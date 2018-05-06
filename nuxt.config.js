@@ -48,6 +48,6 @@ module.exports = {
         // '$': 'jquery',
         '_': 'lodash'
       })
-    ]
+    ],
   }
 }

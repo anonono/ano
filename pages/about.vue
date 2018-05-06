@@ -1,5 +1,6 @@
 <template>
   <section class="section">
+    <Noise></Noise>
     <div class="wrap">
       <Header :progress="progress" :about="true"></Header>
       <div class="about">
@@ -47,12 +48,14 @@
 
 <script>
 import Header from "~/components/Header.vue";
+import Noise from "~/components/Noise.vue";
 
 import axios from "axios";
 
 export default {
   components: {
-    Header
+    Header,
+    Noise
   },
   data() {
     return {
@@ -92,9 +95,6 @@ export default {
   position: fixed;
   left: 0;
   width: 100%;
-}
-.section {
-  background: url(/images/noise.png) repeat;
 }
 .about {
   padding-top: 130px;

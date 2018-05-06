@@ -87,7 +87,7 @@ export default {
   &__logo {
     width: 60px;
     position: absolute;
-    top: 40px;
+    top: 25px;
     left: 25px;
     transform: rotate(330deg);
 

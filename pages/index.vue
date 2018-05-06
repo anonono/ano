@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+    <Noise></Noise>
     <div class="inner">
       <Header :progress="progress"></Header>
       <div class="wrap">
@@ -14,6 +15,7 @@
 import Header from "~/components/Header.vue";
 import Kv from "~/components/Kv.vue";
 import Portfolio from "~/components/Portfolio.vue";
+import Noise from "~/components/Noise.vue";
 
 import axios from "axios";
 
@@ -21,7 +23,8 @@ export default {
   components: {
     Header,
     Kv,
-    Portfolio
+    Portfolio,
+    Noise
   },
   data() {
     return {
@@ -47,7 +50,6 @@ export default {
 
 .container {
   height: 100vh * 5;
-  background: url(/images/noise.png) repeat;
   background-attachment: fixed;
 }
 .inner {
