@@ -81,6 +81,9 @@ export default {
 
 .header {
   height: 130px;
+  .wrap {
+    height: 100%;
+  }
   &__logo {
     width: 60px;
     position: absolute;
