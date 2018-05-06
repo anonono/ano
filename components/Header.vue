@@ -86,6 +86,8 @@ export default {
     position: absolute;
     top: 40px;
     left: 25px;
+    transform: rotate(330deg);
+
     svg {
       width: 100%;
     }

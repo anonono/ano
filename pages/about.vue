@@ -4,22 +4,11 @@
       <Header :progress="progress" :about="true"></Header>
       <div class="about">
         <div class="about__top">
-          <div class="slogan">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 440">
-              <defs>
-                <text id="text" font-size="105" stroke="#1c1c1c" stroke-width="1">
-                  <tspan x="0" dy="1em">HI,</tspan>
-                  <tspan x="0" dy="1em">I AM</tspan>
-                  <tspan x="0" dy="1em">JOU</tspan>
-                  <tspan x="0" dy="1em">HSUAN</tspan>
-                </text>
-                <mask id="text_mask">
-                  <use x="0" y="0" xlink:href="#text" opacity="1" fill="#ffffff" />
-                </mask>
-              </defs>
-              <use x="0" y="0" xlink:href="#text" fill="#ffffff" />
-            </svg>
-          </div>
+          <div>HI,</div>
+          <span>I AM </span>
+          <span>JOU HSUAN</span>
+        </div>
+        <div class="about__left">
           <div class="about__desc">
             <p>
               吳柔萱，出生與工作於台北，是一名UI/ UX設計師。接觸UIUX領域大約2年的時間，和多個不同領域的廠商合作過，喜歡咀嚼、吸收再吐出的循環過程，希望能不斷地變得更好。
@@ -28,12 +17,19 @@
               近期的座右銘是<br/>It always seems impossible until it's done.
             </p>
           </div>
-          <div class="about__links">
-            <div class="title">{ More about me }</div>
-            <a href="#">Resume</a>
-            <a href="mailto:anono1155@gmail.com">Email</a>
-            <a href="https://www.behance.net/anono115508b4">Behance</a>
-            <a href="www.linkedin.com/in/annwu1155">LinkedIn</a>
+        </div>
+        <div class="about__right">
+          <div>
+            <div class="about__links">
+              <div class="title">{ About }</div>
+              <a href="#">Resume</a>
+              <a href="mailto:anono1155@gmail.com">Email</a>
+              <a href="https://www.behance.net/anono115508b4">Behance</a>
+              <a href="www.linkedin.com/in/annwu1155">LinkedIn</a>
+            </div>
+            <div class="about__img">
+              <img src="/images/about.gif" alt="">
+            </div>
           </div>
         </div>
         <div class="about__partners">
@@ -102,32 +98,58 @@ export default {
 }
 .about {
   padding-top: 130px;
+  @include clearfix;
   &__top {
-    max-width: 440px;
+    font-size: 105px;
+    font-weight: 600;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1px #1c1c1c;
+    margin-bottom: 90px;
+  }
+  &__left,
+  &__right {
+    float: left;
+    width: 50%;
+  }
+  &__right {
+    & > div {
+      display: table;
+      width: 100%;
+    }
   }
   &__desc {
-    margin-top: -30px;
-    padding-right: 50px;
+    max-width: 300px;
     padding-bottom: 30px;
     text-align: justify;
-    border-bottom: 1px solid #e0e0e0;
   }
   &__links {
-    padding: 30px 0;
-    border-bottom: 1px solid #e0e0e0;
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 40px;
     a {
       color: #d58b8b;
       text-decoration: none;
-      display: inline-block;
+      display: block;
       font-size: 20px;
-      padding: 10px 0;
-      margin-right: 20px;
+      padding: 10px;
       font-weight: 600;
+      text-align: right;
+    }
+  }
+  &__img {
+    display: table-cell;
+    vertical-align: top;
+    padding-bottom: 50px;
+    img {
+      width: 100%;
     }
   }
   &__partners {
-    padding-top: 30px;
+    clear: left;
+    padding-top: 50px;
     padding-bottom: 80px;
+    border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
     @include clearfix;
     .title {
@@ -159,6 +181,15 @@ export default {
 p {
   & + & {
     margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .about {
+    &__top {
+      span {
+        display: block;
+      }
+    }
   }
 }
 </style>
