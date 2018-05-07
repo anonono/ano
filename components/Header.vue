@@ -1,9 +1,11 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.69 15.91">
-        <path id="infinity" d="M159,63c-3.05-.09-12.32,3.06-14,4s-9,4-11.22,5a8.17,8.17,0,0,1-8.92-3,6.59,6.59,0,0,1,0-7.43C126,60,130,59,132.3,60.12,135,61,144,66,144,66s5.24,3,7.62,4.52a19.38,19.38,0,0,0,7.43,3c2.95.5,5.68-2.57,5.95-3C166,69,165,66,164,65S162.05,63.09,159,63Z" transform="translate(-122.72 -58.64)" :style="dashOffset" />
-      </svg>
+      <nuxt-link to="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.69 15.91">
+          <path id="infinity" d="M159,63c-3.05-.09-12.32,3.06-14,4s-9,4-11.22,5a8.17,8.17,0,0,1-8.92-3,6.59,6.59,0,0,1,0-7.43C126,60,130,59,132.3,60.12,135,61,144,66,144,66s5.24,3,7.62,4.52a19.38,19.38,0,0,0,7.43,3c2.95.5,5.68-2.57,5.95-3C166,69,165,66,164,65S162.05,63.09,159,63Z" transform="translate(-122.72 -58.64)" :style="dashOffset" />
+        </svg>
+      </nuxt-link>
     </div>
     <div class="wrap">
       <div class="header__about" :style="scale" v-if="!about">
@@ -26,7 +28,11 @@ export default {
       endPoint: 0.5
     };
   },
-  props: ["progress", "about"],
+  props: {
+    progress: { default: 1 },
+    about: { default: false },
+    project: { default: false }
+  },
   computed: {
     scale() {
       let ratio;
@@ -41,6 +47,9 @@ export default {
               (this.endPoint - this.startPoint)) *
             1.5 +
           1;
+      }
+      if (this.project) {
+        ratio = 1;
       }
       return { transform: "scale(" + ratio + ")" };
     },
@@ -88,9 +97,8 @@ export default {
     width: 60px;
     position: absolute;
     top: 25px;
-    left: 25px;
+    left: -120px;
     transform: rotate(330deg);
-
     svg {
       width: 100%;
     }
@@ -100,7 +108,7 @@ export default {
     float: right;
     width: 60px;
     right: -30px;
-    top: 40px;
+    top: 25px;
     z-index: 100000;
     transform-origin: top right;
     a {
@@ -136,10 +144,13 @@ export default {
   stroke-dasharray: 120;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 960px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
   .header {
     &__logo {
       left: 0;
+    }
+    &__about {
+      right: 0;
     }
   }
 }

@@ -43,6 +43,7 @@
         </div>
       </div>
     </div>
+
   </section>
 </template>
 
@@ -90,7 +91,6 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/common";
 
-@include slogan;
 .header {
   position: fixed;
   left: 0;

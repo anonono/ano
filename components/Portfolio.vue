@@ -2,7 +2,7 @@
   <div class="portfolio" :style="translateY">
     <div class="portfolio__col" v-for="(group, index) in projects" :key="index" :style="colStyle[index]">
       <div v-for="(project, index) in group" :key="index" class="portfolio__link" :style="skewAngle">
-        <nuxt-link to="/"><img :src="project.img" alt=""></nuxt-link>
+        <nuxt-link :to="'/'+project.name"><img :src="project.img" alt=""></nuxt-link>
       </div>
       <div v-if="index == projects.length -1">
         <a href="mailto:anono1155@gmail.com" class="contactBox">
