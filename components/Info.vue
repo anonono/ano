@@ -17,11 +17,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .info {
-  padding-top: 60px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   padding-left: 35%;
   border-bottom: 1px solid #e2e2e2;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   &__header {
     margin-bottom: 20px;
   }

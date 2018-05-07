@@ -39,8 +39,8 @@ export default {
     );
   }
   .wrap {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 70px;
+    padding-bottom: 50px;
     &:after {
       content: none;
     }
@@ -51,7 +51,7 @@ export default {
   }
   &__title {
     position: absolute;
-    top: -123px;
+    top: -92px;
     font-weight: 600;
     font-size: 50px;
   }

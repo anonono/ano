@@ -80,9 +80,6 @@ export default {
             (this.endPoint - this.startPoint) *
             120;
       }
-      if (this.about) {
-        ratio = 0;
-      }
       return { "stroke-dashoffset": ratio };
     }
   }
@@ -93,6 +90,8 @@ export default {
 
 .header {
   height: 130px;
+  z-index: 2;
+
   .wrap {
     height: 100%;
   }
