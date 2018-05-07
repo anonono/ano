@@ -70,7 +70,7 @@ export default {
     dashOffset() {
       let ratio;
       if (this.progress < this.startPoint) {
-        ratio = 200;
+        ratio = 120;
       } else if (this.progress > this.endPoint) {
         ratio = 0;
       } else {
@@ -79,6 +79,9 @@ export default {
           (this.progress - this.startPoint) /
             (this.endPoint - this.startPoint) *
             120;
+      }
+      if (this.about) {
+        ratio = 0;
       }
       return { "stroke-dashoffset": ratio };
     }
@@ -97,8 +100,10 @@ export default {
     width: 60px;
     position: absolute;
     top: 25px;
-    left: -120px;
+    left: 120px;
     transform: rotate(330deg);
+    z-index: 1;
+
     svg {
       width: 100%;
     }

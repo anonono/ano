@@ -1,8 +1,8 @@
 <template>
   <section class="section">
     <Noise></Noise>
+    <Header :project="true"></Header>
     <div class="wrap">
-      <Header :project="true"></Header>
       <Banner :image='image' :chinese="chinese" :english="english"></Banner>
       <Info :year="year" :category="category" :status="status" :desc="desc"></Info>
       <Single :image="'/images/scb-single.png'"></Single>
@@ -57,6 +57,10 @@ export default {
 @import "../assets/common";
 .header {
   height: 0 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .wrap {
   &:after {

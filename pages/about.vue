@@ -105,7 +105,7 @@ export default {
     line-height: 1;
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke: 1px #1c1c1c;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
   }
   &__left,
   &__right {
@@ -162,10 +162,12 @@ export default {
     }
     li {
       float: left;
-      width: 33.33%;
+      width: 30%;
+      margin-left: 5%;
       margin-bottom: 10px;
       &:nth-child(3n + 1) {
         clear: left;
+        margin-left: 0;
       }
     }
     img {
