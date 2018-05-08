@@ -25,5 +25,13 @@ export default {
   &__header {
     margin-bottom: 20px;
   }
+  &__body {
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .info {
+    padding: 30px 0;
+  }
 }
 </style>

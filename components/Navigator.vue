@@ -75,4 +75,25 @@ export default {
     -webkit-text-stroke: 1px #1c1c1c;
   }
 }
+@media only screen and (max-width: 768px) {
+  .navigator {
+    .wrap {
+      padding-top: 50px;
+    }
+    &__prev,
+    &__next {
+      width: 100%;
+    }
+    &__prev {
+      border-bottom: solid 1px #e2e2e2;
+    }
+    a {
+      min-height: 0;
+    }
+    &__name {
+      font-size: 40px;
+      padding-bottom: 60px;
+    }
+  }
+}
 </style>

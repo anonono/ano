@@ -115,12 +115,12 @@ export default {
 }
 .kv {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   @include clearfix;
   &__left {
     position: relative;
     z-index: 1;
-    width: 440px;
+    max-width: 440px;
   }
 
   &__right {
@@ -147,5 +147,15 @@ export default {
 }
 .videoContainer {
   overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  .kv {
+    &__left {
+      padding-top: 135px;
+    }
+    &__right {
+      width: 100%;
+    }
+  }
 }
 </style>

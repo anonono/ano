@@ -3,13 +3,13 @@
     <Noise></Noise>
     <Header :project="true"></Header>
     <div class="wrap">
-      <Banner :image='image' :chinese="chinese" :english="english"></Banner>
-      <Info :year="year" :category="category" :status="status" :desc="desc"></Info>
-      <Single :image="'/images/scb-single.png'"></Single>
-      <Double :left="'/images/scb-left.png'" :right="'/images/scb-right.png'"></Double>
+      <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width"></Banner>
+      <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
+      <Single :image=" '/images/scb-single.png' "></Single>
+      <Double :left=" '/images/scb-left.png' " :right=" '/images/scb-right.png' "></Double>
     </div>
-    <Highlight :image="'/images/scb-highlight.png'" :highlight="highlight" :color1="color1" :color2="color2"></Highlight>
-    <Navigator :next="'yuting'" :name="'鍾宇婷個人網站'"></Navigator>
+    <Highlight :image=" '/images/scb-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
+    <Navigator :next=" 'yuting' " :name=" '鍾宇婷個人網站' "></Navigator>
   </section>
 </template>
 
@@ -36,7 +36,9 @@ export default {
   },
   data() {
     return {
-      image: "/images/scb-banner.png",
+      window_width: 0,
+      image_pc: "/images/scb-banner.png",
+      image_mobile: "/images/scb-banner--m.png",
       chinese: "渣打銀行信用卡行銷網",
       english: "Standard Chartered Bank Credit Card Marketing Page",
       year: 2017,
@@ -49,6 +51,15 @@ export default {
       color1: "#002687",
       color2: "#233362"
     };
+  },
+  mounted() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  methods: {
+    handleResize() {
+      this.window_width = window.innerWidth;
+    }
   }
 };
 </script>

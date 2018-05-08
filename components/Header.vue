@@ -11,7 +11,7 @@
       <div class="header__about" :style="scale" v-if="!about">
         <nuxt-link to="/about">
           <span :style="rotate">
-            <img src="/images/header_about.png" alt="">
+            <i class="aboutImg"></i>
           </span>
         </nuxt-link>
       </div>
@@ -90,7 +90,7 @@ export default {
 
 .header {
   height: 130px;
-  z-index: 2;
+  z-index: 1000;
 
   .wrap {
     height: 100%;
@@ -101,7 +101,8 @@ export default {
     top: 25px;
     left: 120px;
     transform: rotate(330deg);
-    z-index: 1;
+    z-index: 1000;
+    backface-visibility: hidden;
 
     svg {
       width: 100%;
@@ -115,25 +116,28 @@ export default {
     top: 25px;
     z-index: 100000;
     transform-origin: top right;
+    backface-visibility: hidden;
+
     a {
       display: block;
       transition: transform 0.1s linear;
       transform-origin: top right;
+      backface-visibility: hidden;
     }
-    img {
-      width: 100%;
+    .aboutImg {
       transition: transform 1000000000000s linear;
       transform: rotate(0deg);
     }
     span {
       display: block;
       line-height: 0;
+      backface-visibility: hidden;
     }
     &:hover {
       a {
         transform: scale(1.2);
       }
-      img {
+      .aboutImg {
         transform: rotate(36000deg);
         transition: transform 400s linear;
       }
@@ -147,15 +151,39 @@ export default {
   stroke-width: 2px;
   stroke-dasharray: 120;
 }
-
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
+.aboutImg {
+  display: block;
+  line-height: 0;
+  width: 60px;
+  height: 60px;
+  backface-visibility: hidden;
+  background-image: url("/images/header_about.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1200px) {
   .header {
+    height: 50px;
     &__logo {
       left: 0;
     }
     &__about {
       right: 0;
     }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    &__about {
+      width: 45px;
+      right: -20px;
+      top: 0;
+    }
+  }
+  .aboutImg {
+    width: 45px;
+    height: 45px;
+    background-image: url("/images/header_about--m.png");
   }
 }
 </style>

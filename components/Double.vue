@@ -32,4 +32,16 @@ export default {
     padding-top: 100px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .double {
+    padding: 50px 0;
+    &__left,
+    &__right {
+      width: 100%;
+    }
+    &__right {
+      padding-top: 50px;
+    }
+  }
+}
 </style>

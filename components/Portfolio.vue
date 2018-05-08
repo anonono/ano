@@ -93,7 +93,7 @@ export default {
 
 .portfolio {
   position: relative;
-  z-index: 99999;
+  z-index: 999;
   padding-bottom: 300px;
   @include clearfix;
   &__col {
@@ -141,6 +141,14 @@ export default {
     bottom: 45px;
     left: 45px;
     right: 45px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .portfolio {
+    &__col {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }
 </style>

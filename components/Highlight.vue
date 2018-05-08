@@ -60,8 +60,16 @@ export default {
     text-decoration: underline;
   }
   &__image {
+    line-height: 0;
     img {
       width: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .highlight {
+    &__desc {
+      font-weight: 600;
     }
   }
 }
