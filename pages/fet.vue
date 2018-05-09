@@ -38,8 +38,7 @@ export default {
   data() {
     return {
       window_width: 0,
-      sticky: "125px",
-      ...project[0].data
+      ...project[1].data
     };
   },
   mounted() {

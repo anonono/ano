@@ -1,8 +1,10 @@
 <template>
   <div class="banner">
-    <div class="banner__text">
-      <div class="banner__chinese">{{chinese}}</div>
-      <div class="banner__english">{{english}}</div>
+    <div class="banner__text" :style="sticky">
+      <div>
+        <div class="banner__chinese">{{chinese}}</div>
+        <div class="banner__english">{{english}}</div>
+      </div>
     </div>
     <div class="banner__image"><img :src="banner__image" alt=""></div>
   </div>
@@ -11,7 +13,14 @@
 <script>
 export default {
   components: {},
-  props: ["chinese", "english", "image_pc", "image_mobile", "window_width"],
+  props: [
+    "chinese",
+    "english",
+    "image_pc",
+    "image_mobile",
+    "window_width",
+    "sticky"
+  ],
   computed: {
     banner__image() {
       if (this.window_width > 768) {
@@ -26,22 +35,29 @@ export default {
 <style lang="scss" scoped>
 .banner {
   &__text {
-    width: 30%;
+    width: 100%;
     font-weight: 600;
     line-height: 1.2;
-    position: absolute;
+    position: fixed;
     top: 125px;
     left: 0;
+    & > div {
+      max-width: 958px;
+      margin: 0 auto;
+    }
   }
   &__chinese {
     font-size: 50px;
     margin-bottom: 20px;
     line-height: 1.2;
+    width: 30%;
   }
   &__english {
     font-size: 24px;
+    width: 30%;
   }
   &__image {
+    line-height: 0;
     img {
       width: 100%;
     }
@@ -51,14 +67,17 @@ export default {
   .banner {
     padding-top: 100px;
     &__text {
-      position: static;
-      width: 100%;
+      position: static !important;
     }
     &__chinese {
       padding-right: 60px;
       margin-bottom: 10px;
       padding-bottom: 5px;
       border-bottom: solid 1px #e2e2e2;
+      width: 100%;
+    }
+    &__english {
+      width: 100%;
     }
   }
 }

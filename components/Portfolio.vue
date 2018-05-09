@@ -149,6 +149,24 @@ export default {
     &__col {
       width: 100%;
       margin-left: 0;
+      transform: translateY(0) !important;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .portfolio {
+    &__link {
+      overflow: hidden;
+      img {
+        opacity: 0.9;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+      &:hover {
+        img {
+          opacity: 1;
+          transform: scale(1.2) rotate(2deg);
+        }
+      }
     }
   }
 }
