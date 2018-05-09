@@ -26,12 +26,17 @@ export default {
     return {
       startPoint: 0.4,
       endPoint: 1,
-      prev: 0,
-      next: 0
+      next: 0,
+      ticking: false
     };
   },
+  watch: {
+    prev: _.debounce(function() {
+      this.next = this.prev;
+    }, 30)
+  },
   computed: {
-    translateY() {
+    prev() {
       let ratio;
       if (this.progress < this.startPoint) {
         ratio = 0;
@@ -43,13 +48,10 @@ export default {
           (this.endPoint - this.startPoint) *
           100;
       }
-      this.prev = ratio;
-      clearTimeout(this.timer);
-      const a = this;
-      this.timer = setTimeout(function() {
-        a.next = a.prev;
-      }, 50);
-      return { transform: "translateY(-" + ratio + "%)" };
+      return ratio;
+    },
+    translateY() {
+      return { transform: "translateY(-" + this.prev + "%)" };
     },
     colStyle() {
       return [
@@ -60,22 +62,21 @@ export default {
     },
     skewAngle() {
       let diff = this.next - this.prev,
-        angle,
-        blur;
-      if (diff >= 10) {
+        angle;
+      if (diff >= 3) {
         angle = 5;
-        blur = 3;
-      } else if (diff <= -20) {
+        // blur = 3;
+      } else if (diff <= -3) {
         angle = -5;
-        blur = 3;
+        // blur = 3;
       } else {
         angle = 0;
-        blur = 0;
+        // blur = 0;
       }
       return {
-        transform: "skewY(" + angle + "deg)",
-        "-webkit-filter": " blur(" + blur + "px)",
-        filter: " blur(" + blur + "px)"
+        transform: "skewY(" + angle + "deg)"
+        // "-webkit-filter": " blur(" + blur + "px)",
+        // filter: " blur(" + blur + "px)"
       };
     },
     projects() {
@@ -109,7 +110,7 @@ export default {
   }
   &__link {
     margin-bottom: 40px;
-    transition: filter 0.05s linear, transform 0.05s linear;
+    transition: transform 0.15s ease;
     & > a {
       display: block;
       line-height: 0;

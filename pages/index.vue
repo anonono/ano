@@ -16,7 +16,6 @@ import Header from "~/components/Header.vue";
 import Kv from "~/components/Kv.vue";
 import Portfolio from "~/components/Portfolio.vue";
 import Noise from "~/components/Noise.vue";
-
 import axios from "axios";
 
 export default {
