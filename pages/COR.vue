@@ -5,11 +5,14 @@
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
       <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
-      <Single :image=" '/images/fet-single1.png' "></Single>
-      <Double :left=" '/images/fet-left.png' " :right=" '/images/fet-right.png' "></Double>
-      <Single :image=" '/images/fet-single2.png' "></Single>
+      <Media :video=" '/media/jomalone-video1.mov' "></Media>
+      <Single :image=" '/images/jomalone-single1.png' "></Single>
+      <Media :video=" '/media/jomalone-video2.mov' "></Media>
+      <Single :image=" '/images/jomalone-single2.png' "></Single>
+      <Media :video=" '/media/jomalone-video3.mov' "></Media>
     </div>
-    <Navigator :next=" 'Jomalone' " :name=" 'Jomalone官方網站' "></Navigator>
+    <Highlight :image=" '/images/jomalone-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
+    <Navigator :next=" 'COR' " :name=" '遠山呼喚Logo設計' "></Navigator>
   </section>
 </template>
 
@@ -22,6 +25,7 @@ import Single from "~/components/Single.vue";
 import Double from "~/components/Double.vue";
 import Highlight from "~/components/Highlight.vue";
 import Navigator from "~/components/Navigator.vue";
+import Media from "~/components/Media.vue";
 import project from "~/assets/project.js";
 
 export default {
@@ -33,13 +37,14 @@ export default {
     Single,
     Double,
     Highlight,
-    Navigator
+    Navigator,
+    Media
   },
   data() {
     return {
       window_width: 0,
       sticky: "125px",
-      ...project[1].data
+      ...project[2].data
     };
   },
   mounted() {

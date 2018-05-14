@@ -40,6 +40,9 @@ export default {
         document.querySelector("body").offsetHeight - window.innerHeight;
       this.progress = scrollY / totalY;
     }
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>

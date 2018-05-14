@@ -66,7 +66,7 @@ export default {
       this.window_width = window.innerWidth;
     }
   },
-  destroyed() {
+  beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("resize", this.handleResize);
   }
