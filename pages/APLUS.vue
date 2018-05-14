@@ -4,12 +4,11 @@
     <Header :project="true"></Header>
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
-      <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
+      <Info :year=" year " :category="category" :status="status" :desc="desc" :goals="goals"></Info>
       <Single :image=" '/images/aplus-single.png' "></Single>
       <Double :left=" '/images/aplus-left.png' " :right=" '/images/aplus-right.png' "></Double>
     </div>
-    <Highlight :image=" '/images/aplus-highlight1.png' " :highlight="highlight1 " :color1="color1 " :color2="color2 "></Highlight>
-    <Highlight :image=" '/images/aplus-highlight2.png' " :highlight="highlight2 " :color1="color1 " :color2="color2 "></Highlight>
+    <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'DAILY' " :name=" 'Daily UI挑戰' "></Navigator>
   </section>
 </template>
@@ -40,6 +39,17 @@ export default {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          media: "/media/aplus_highlight.mov",
+          desc:
+            "首頁第一屏以滿版形象影片為主視覺，除了抓住使用者的目光外，可以透過簡單的影像敘事建立公司形象"
+        },
+        {
+          image: "/images/aplus-highlight.png",
+          desc: "傾斜滑出的選單，增加介面體驗的一致性"
+        }
+      ],
       ...project[6].data
     };
   },

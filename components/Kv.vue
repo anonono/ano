@@ -26,7 +26,7 @@
     </div>
     <div class="kv__right">
       <div class="kv__video" :style="'transform:translateX('+rightStyle+'%)'">
-        <iframe type="text/html" :style="'transform:translateX('+ -1*rightStyle+'%)'" width="640" height="360" src="https://www.youtube.com/embed/TUfN2z6IIMA?&autoplay=1&loop=1&rel=0&showinfo=0&controls=0&iv_load_policy=3&playlist=TUfN2z6IIMA&mute=1" frameborder="0" allowfullscreen></iframe>
+        <video :style="'transform:translateX('+ -1*rightStyle+'%)'" muted loop autoplay src="/media/index_video.mov"></video>
       </div>
     </div>
   </div>

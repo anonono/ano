@@ -31,10 +31,10 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll_index);
   },
   methods: {
-    handleScroll(e) {
+    handleScroll_index(e) {
       const scrollY = window.scrollY;
       const totalY =
         document.querySelector("body").offsetHeight - window.innerHeight;
@@ -42,7 +42,7 @@ export default {
     }
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll_index);
   }
 };
 </script>

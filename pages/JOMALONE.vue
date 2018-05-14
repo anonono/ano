@@ -11,7 +11,7 @@
       <Single :image=" '/images/jomalone-single2.png' "></Single>
       <Media :video=" '/media/jomalone-video3.mov' "></Media>
     </div>
-    <Highlight :image=" '/images/jomalone-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
+    <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'COR' " :name=" '遠山呼喚Logo設計' "></Navigator>
   </section>
 </template>
@@ -44,6 +44,13 @@ export default {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          image: "/images/jomalone-highlight.png",
+          desc:
+            "香氣是抽象的，因此在頁面上呈現植物的原貌可以進一步貼近對於香水的想像，並採取互動的方式來認識這些植物"
+        }
+      ],
       ...project[2].data
     };
   },

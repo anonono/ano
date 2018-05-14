@@ -5,7 +5,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'nuxt_test',
+    title: 'JOU HSUAN WU - PORTFOLIO',
     meta: [{
         charset: 'utf-8'
       },
@@ -42,12 +42,16 @@ module.exports = {
   css: [
     '~assets/main.scss'
   ],
+  plugins: [{
+    src: '~/plugins/vue-carousel',
+    ssr: false
+  }],
   build: {
     plugins: [
       new webpack.ProvidePlugin({
         // '$': 'jquery',
         '_': 'lodash'
       })
-    ],
+    ]
   }
 }

@@ -7,8 +7,8 @@
       <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
       <Single :image=" '/images/yuting-single.png' "></Single>
     </div>
-    <Highlight :image=" '/images/yuting-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
-    <Navigator :next=" 'FUBON' " :name=" '富邦產險會員中心網站' "></Navigator>
+    <Highlight :highlights="highlights" :color1="color1 " :color2="color2 "></Highlight>
+    <Navigator :next=" 'SCB' " :name=" '渣打銀行信用卡行銷網' "></Navigator>
   </section>
 </template>
 
@@ -38,6 +38,12 @@ export default {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          media: "/media/yuting_highlight.mov",
+          desc: "以互動的方式來呈現詩文，視覺、文字、動作形成不同的閱讀體驗"
+        }
+      ],
       ...project[9].data
     };
   },

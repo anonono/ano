@@ -4,13 +4,12 @@
     <Header :project="true"></Header>
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
-      <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
+      <Info :year=" year " :category="category " :status="status " :desc="desc " :goals="goals"></Info>
+      <Slider :plan="plan" :slider="slider"></Slider>
       <Single :image=" '/images/fbi-single.png' "></Single>
       <Double :left=" '/images/fbi-left.png' " :right=" '/images/fbi-right.png' "></Double>
-      <Single :image=" '/images/fbi-single2.png' "></Single>
     </div>
-    <Highlight :image=" '/images/fbi-highlight1.png' " :highlight="highlight1 " :color1="color1 " :color2="color2 "></Highlight>
-    <Highlight :image=" '/images/fbi-highlight2.png' " :highlight="highlight2 " :color1="color1 " :color2="color2 "></Highlight>
+    <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'UDESIGN' " :name=" 'Udesign官方網站' "></Navigator>
   </section>
 </template>
@@ -24,6 +23,7 @@ import Single from "~/components/Single.vue";
 import Double from "~/components/Double.vue";
 import Highlight from "~/components/Highlight.vue";
 import Navigator from "~/components/Navigator.vue";
+import Slider from "~/components/Slider.vue";
 import project from "~/assets/project.js";
 
 export default {
@@ -35,12 +35,32 @@ export default {
     Single,
     Double,
     Highlight,
-    Navigator
+    Navigator,
+    Slider
   },
   data() {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          image: "/images/fbi-highlight1.png",
+          desc: "新增會員中心首頁，為使用者統整個人化的資訊"
+        },
+        {
+          image: "/images/fbi-highlight2.png",
+          desc:
+            "改變舊網條列保單的形式，現以1個產物為單位整合多張保單，可以清楚了解保險現況"
+        }
+      ],
+      plan:
+        "本次改版加入了許多新內容，並包含會員登入功能，並有設置非會員也能瀏覽的頁面。企劃從SiteMap梳理架構開始；Functional Map確認各部分功能；重點功能的Flow Chart規劃；到最後的UI Flow盤點出須產出頁面",
+      slider: [
+        "/images/fbi-slider1.png",
+        "/images/fbi-slider2.png",
+        "/images/fbi-slider3.png",
+        "/images/fbi-slider4.png"
+      ],
       ...project[4].data
     };
   },
@@ -55,7 +75,7 @@ export default {
       let top;
       top = window.scrollY + 125;
       const $info = document.querySelectorAll(".info")[0];
-      if (top > $info.offsetTop + 50) {
+      if (top >= $info.offsetTop + 50) {
         this.sticky = {
           top: $info.offsetTop + 50 + "px",
           position: "absolute"

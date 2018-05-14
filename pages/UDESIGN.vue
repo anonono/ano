@@ -4,15 +4,15 @@
     <Header :project="true"></Header>
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
-      <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
+      <Info :year=" year " :category="category" :status="status" :desc="desc" :goals="goals"></Info>
       <Single :image=" '/images/udesign-single1.png' "></Single>
       <Double :left=" '/images/udesign-left1.png' " :right=" '/images/udesign-right1.png' "></Double>
       <Single :image=" '/images/udesign-single2.png' "></Single>
       <Double :left=" '/images/udesign-left2.png' " :right=" '/images/udesign-right2.png' "></Double>
       <Single :image=" '/images/udesign-single2.png' "></Single>
     </div>
-    <Highlight :image=" '/images/udesign-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
-    <Navigator :next=" 'YUTING' " :name=" '鍾宇婷個人網站' "></Navigator>
+    <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
+    <Navigator :next=" 'APLUS' " :name=" '艾普拉斯官方網站' "></Navigator>
   </section>
 </template>
 
@@ -42,6 +42,13 @@ export default {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          image: "/images/udesign-highlight.png",
+          desc:
+            "在商品列表頁，左側可以展開了一個工具列方便使用者篩選商品，亦可以在此狀態下瀏覽商品"
+        }
+      ],
       ...project[5].data
     };
   },

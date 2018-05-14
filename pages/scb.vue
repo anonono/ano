@@ -8,8 +8,8 @@
       <Single :image=" '/images/scb-single.png' "></Single>
       <Double :left=" '/images/scb-left.png' " :right=" '/images/scb-right.png' "></Double>
     </div>
-    <Highlight :image=" '/images/scb-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
-    <Navigator :next=" 'yuting' " :name=" '鍾宇婷個人網站' "></Navigator>
+    <Highlight :highlights="highlights" :color1="color1 " :color2="color2 "></Highlight>
+    <Navigator :next=" 'FET' " :name=" '遠傳行銷活動網站' "></Navigator>
   </section>
 </template>
 
@@ -39,6 +39,13 @@ export default {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          image: "/images/scb-highlight.png",
+          desc:
+            "畫面兩側有設計不隨頁面下滑而移動的固定元件，除了視覺上的效果外，也可以讓使用者隨時知道所處頁面狀態與功能"
+        }
+      ],
       ...project[0].data
     };
   },

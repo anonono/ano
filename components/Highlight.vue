@@ -3,9 +3,12 @@
     <div class="wrap">
       <div class="highlight__inner">
         <div class="highlight__title">Highlight</div>
-        <div class=" highlight__desc ">{{highlight}}</div>
-        <div class="highlight__image ">
-          <img :src="image " alt=" ">
+        <div class="highlight__content" v-for="highlight in highlights">
+          <div class=" highlight__desc ">{{highlight.desc}}</div>
+          <div class="highlight__image ">
+            <img :src="highlight.image " v-if="highlight.image">
+            <video :src="highlight.media" v-if="highlight.media" muted loop autoplay></video>
+          </div>
         </div>
       </div>
     </div>
@@ -15,7 +18,7 @@
 <script>
 export default {
   components: {},
-  props: ["image", "highlight", "color1", "color2"]
+  props: ["highlights", "color1", "color2"]
 };
 </script>
 <style lang="scss" scoped>
@@ -33,7 +36,7 @@ export default {
     z-index: 0;
     opacity: 0.8;
     background-image: linear-gradient(
-      90deg,
+      142deg,
       var(--tooltip-color1),
       var(--tooltip-color2)
     );
@@ -65,9 +68,9 @@ export default {
       width: 100%;
     }
   }
-  & + & {
-    .highlight__title {
-      display: none;
+  &__content {
+    & + & {
+      margin-top: 100px;
     }
   }
 }

@@ -4,14 +4,14 @@
     <Header :project="true"></Header>
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
-      <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
+      <Info :year=" year " :category="category" :status="status" :desc="desc" :goals="goals"></Info>
       <Single :image=" '/images/payeasy-single1.png' "></Single>
       <Double :left=" '/images/payeasy-left1.png' " :right=" '/images/payeasy-right1.png' "></Double>
       <Single :image=" '/images/payeasy-single2.png' "></Single>
       <Double :left=" '/images/payeasy-left2.png' " :right=" '/images/payeasy-right2.png' "></Double>
       <Single :image=" '/images/payeasy-single2.png' "></Single>
     </div>
-    <Highlight :image=" '/images/payeasy-highlight.png' " :highlight="highlight " :color1="color1 " :color2="color2 "></Highlight>
+    <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'YUTING' " :name=" '鍾宇婷個人網站' "></Navigator>
   </section>
 </template>
@@ -42,6 +42,13 @@ export default {
     return {
       window_width: 0,
       sticky: "125px",
+      highlights: [
+        {
+          image: "/images/payeasy-highlight.png",
+          desc:
+            "每間旅社的頁面上有觀看旅客評論的區塊，由對話框而來的設計概念，為頁面增添輕鬆氛圍"
+        }
+      ],
       ...project[8].data
     };
   },
