@@ -5,10 +5,9 @@
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
       <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
-      <Single :image=" '/images/cor-single1.png' "></Single>
-      <Single :image=" '/images/cor-single2.png' "></Single>
+      <Single :image=" '/images/daily-single.png' "></Single>
     </div>
-    <Navigator :next=" 'FUBON' " :name=" '富邦產險會員中心' "></Navigator>
+    <Navigator :next=" 'PAYEASY' " :name=" 'Payeasy員工訂房網' "></Navigator>
   </section>
 </template>
 
@@ -21,7 +20,6 @@ import Single from "~/components/Single.vue";
 import Double from "~/components/Double.vue";
 import Highlight from "~/components/Highlight.vue";
 import Navigator from "~/components/Navigator.vue";
-import Media from "~/components/Media.vue";
 import project from "~/assets/project.js";
 
 export default {
@@ -33,14 +31,13 @@ export default {
     Single,
     Double,
     Highlight,
-    Navigator,
-    Media
+    Navigator
   },
   data() {
     return {
       window_width: 0,
       sticky: "125px",
-      ...project[3].data
+      ...project[7].data
     };
   },
   mounted() {

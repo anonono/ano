@@ -33,7 +33,7 @@ export default [{
     },
     {
         "id": "2",
-        "name": "JOMALON",
+        "name": "JOMALONE",
         "img": "/images/list-jomalone.png",
         "data": {
             image_pc: "/images/jomalone-banner.png",
@@ -54,6 +54,8 @@ export default [{
         "name": "COR",
         "img": "/images/list-cor.png",
         "data": {
+            image_pc: "/images/cor-banner.png",
+            image_mobile: "/images/cor-banner--m.png",
             "chinese": "遠山呼喚Logo設計",
             "english": "Calls Over Ridges Logo Design",
             "year": 2017,
@@ -67,11 +69,17 @@ export default [{
         "name": "FUBON",
         "img": "/images/list-fubon.png",
         "data": {
+            image_pc: "/images/fbi-banner.png",
+            image_mobile: "/images/fbi-banner--m.png",
             "chinese": "富邦產險會員中心網站",
             "english": "Fubon Insurance Member Center Website",
             "year": 2017,
             "category": "Planner / Designer",
             "status": "Delivery",
+            color1: "#06c0d7",
+            color2: "#03c3b5",
+            highlight1: "新增會員中心首頁，為使用者統整個人化的資訊",
+            highlight2: "改變舊網條列保單的形式，現以1個產物為單位整合多張保單，可以清楚了解保險現況",
             "desc": "富邦產險會員中心網站是我第一個從提案、資訊架構整理、企劃到設計網站主視覺設計的案子。在這個過程中，試圖以設計師的角度去提出改版的概念，從一個大多以條列方式呈現資料的保險網站，透過以使用者體驗為中心思考，同步進行資訊整理與UI元件設計，全面性的歸納、整理讓資訊更清晰，更易於使用。",
             "goal": "納入新的資訊內容，並整合個別使用者所需的資訊到新規劃的個人首頁\n將舊有手機版網頁，重新設計為RWD網頁\n從Banner視覺選擇到元件設計，改變傳統產險形象",
             "plan": "本次改版加入了許多新內容，並包含會員登入功能，並有設置非會員也能瀏覽的頁面。企劃從SiteMap梳理架構開始；Functional Map確認各部分功能；重點功能的Flow Chart規劃；到最後的UI Flow盤點出須產出頁面"
@@ -82,11 +90,15 @@ export default [{
         "name": "UDESIGN",
         "img": "/images/list-udesign.png",
         "data": {
+            image_pc: "/images/udesign-banner.png",
+            image_mobile: "/images/udesign-banner--m.png",
             "chinese": "Udesign\n官方網站",
             "english": "Udesign Offical Website",
             "year": 2017,
             "category": "Designer",
             "status": "Proposal",
+            color1: "#ffdd00",
+            color2: "#fbb034",
             "desc": "Udesign是一個結合電子商務與設計媒體的文創平台，主要販售文創商品外，亦有集資、品牌推薦並有關注國際設計趨勢文章等複合性質。目前線上販售文創商品的平台眾多，雖然同為電商性質，但希望能夠加強Udesign對於設計潮流敏感的這個特性，因此在專案上透過一點視覺上的巧思，讓這個平台更有獨特與識別性。",
             "goal": "將舊有電腦版網頁，重新設計為RWD網頁\n商品圖片與廣告共用舊版資料",
             "highlight": "在商品列表頁，左側可以展開了一個工具列方便使用者篩選商品，亦可以在此狀態下瀏覽商品"
@@ -97,14 +109,19 @@ export default [{
         "name": "APLUS",
         "img": "/images/list-aplus.png",
         "data": {
+            image_pc: "/images/aplus-banner.png",
+            image_mobile: "/images/aplus-banner--m.png",
             "chinese": "艾普拉斯官方網站",
             "english": "Aplus Digital Offical Website",
             "year": 2016,
             "category": "Designer",
             "status": "Proposal",
-            "desc": "Udesign是一個結合電子商務與設計媒體的文創平台，主要販售文創商品外，亦有集資、品牌推薦並有關注國際設計趨勢文章等複合性質。目前線上販售文創商品的平台眾多，雖然同為電商性質，但希望能夠加強Udesign對於設計潮流敏感的這個特性，因此在專案上透過一點視覺上的巧思，讓這個平台更有獨特與識別性。",
+            color1: '#febd1f',
+            color2: '#fe7329',
+            "desc": "本專案是為艾普拉斯數位顧問重新設計RWD網站的提案。艾普拉斯是一間以網頁設計為主的公司，因此在規劃設計上可以較一般公司官網來的突破，也因其客戶皆屬於台灣各大銀行、電信業等高端客戶，在視覺上也不能失去大器、大方之感。",
             "goal": "將舊有電腦版網頁，重新設計為RWD網頁\n商品圖片與廣告共用舊版資料",
-            "highlight": "在商品列表頁，左側可以展開了一個工具列方便使用者篩選商品，亦可以在此狀態下瀏覽商品"
+            "highlight1": "首頁第一屏以滿版形象影片為主視覺，除了抓住使用者的目光外，可以透過簡單的影像敘事建立公司形象",
+            "highlight2": "傾斜滑出的選單，增加介面體驗的一致性"
         }
     },
     {
@@ -112,6 +129,8 @@ export default [{
         "name": "DAILY",
         "img": "/images/list-daily.png",
         "data": {
+            image_pc: "/images/daily-banner.png",
+            image_mobile: "/images/daily-banner--m.png",
             "chinese": "Daily UI挑戰",
             "english": "Daily UI Challenge",
             "year": "2017 -",
@@ -124,11 +143,15 @@ export default [{
         "name": "PAYEASY",
         "img": "/images/list-payeasy.png",
         "data": {
+            image_pc: "/images/payeasy-banner.png",
+            image_mobile: "/images/payeasy-banner--m.png",
             "chinese": "Payeasy員工訂房網",
             "english": "Payeasy Employee Booking Website ",
             "year": 2017,
             "category": "Designer",
             "status": "Delivery",
+            color1: "#fd8b29",
+            color2: "#ffbc34",
             "desc": "Payeasy員工訂房網是一個供其公司內部使用的訂房網站，因訂房網站資訊量與功能眾多，進行專案時比較大的琢磨點是在於整合客戶需求並參照國內外旅遊網站功能來進行開發，朝給予最佳的使用者體驗邁進。",
             "goal": "將舊有電腦版網頁，重新設計為RWD網頁\n圖片共用舊版資料",
             "highlight": "每間旅社的頁面上有觀看旅客評論的區塊，由對話框而來的設計概念，為頁面增添輕鬆氛圍"
@@ -139,9 +162,13 @@ export default [{
         "name": "YUTING",
         "img": "/images/list-yuting.png",
         "data": {
+            image_pc: "/images/yuting-banner.png",
+            image_mobile: "/images/yuting-banner--m.png",
             "chinese": "鍾宇婷個人網站",
             "english": "Yu-Ting Chung Personal Website",
             "year": 2016,
+            color1: '#303030',
+            color2: '#060606',
             "category": "Planner / Designer / Coder / Photographer (Teamwork)",
             "status": "School Project",
             "desc": "鍾宇婷是一名來自台北的編劇與導演，在規劃網站前有閱讀過她的劇本、分鏡，也有機會在旁觀察了的影像製作的過程，體驗到從敘述文字化為想像、再轉呈為複雜的影片表現，作品裡有各個創作階段互相交錯的痕跡，進而也影響本次的設計概念，有穿插許多手寫痕跡與不勻稱的排版等，就像散落的文件一般。這個網站設計對我來說特別的是，當需呈現的作品、影像已有一定強度，設計師的角色就要思考如何去引導這些影像被觀看的過程。",

@@ -33,7 +33,7 @@ export default {
     z-index: 0;
     opacity: 0.8;
     background-image: linear-gradient(
-      142deg,
+      90deg,
       var(--tooltip-color1),
       var(--tooltip-color2)
     );
@@ -63,6 +63,11 @@ export default {
     line-height: 0;
     img {
       width: 100%;
+    }
+  }
+  & + & {
+    .highlight__title {
+      display: none;
     }
   }
 }
