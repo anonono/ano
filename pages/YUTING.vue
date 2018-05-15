@@ -5,7 +5,10 @@
     <div class="wrap">
       <Banner :image_pc='image_pc' :image_mobile='image_mobile' :chinese="chinese" :english="english" :window_width="window_width" :sticky="sticky"></Banner>
       <Info :year=" year " :category="category " :status="status " :desc="desc "></Info>
+      <Media :video=" '/media/yuting-video1.mov' "></Media>
       <Single :image=" '/images/yuting-single.png' "></Single>
+      <Media :video=" '/media/yuting-video2.mov' "></Media>
+      <Media :video=" '/media/yuting-video3.mov' "></Media>
     </div>
     <Highlight :highlights="highlights" :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'SCB' " :name=" '渣打銀行信用卡行銷網' "></Navigator>
@@ -21,6 +24,7 @@ import Single from "~/components/Single.vue";
 import Double from "~/components/Double.vue";
 import Highlight from "~/components/Highlight.vue";
 import Navigator from "~/components/Navigator.vue";
+import Media from "~/components/Media.vue";
 import project from "~/assets/project.js";
 
 export default {
@@ -32,6 +36,7 @@ export default {
     Single,
     Double,
     Highlight,
+    Media,
     Navigator
   },
   data() {

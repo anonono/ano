@@ -1,7 +1,7 @@
 <template>
   <div class="video">
     <!-- <video muted loop autoplay> -->
-    <video muted loop autoplay :src="video"></video>
+    <video muted loop autoplay playsinline :src="video"></video>
   </div>
 </template>
 
