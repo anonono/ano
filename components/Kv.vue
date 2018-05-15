@@ -14,7 +14,7 @@
               <use x="0" y="0" xlink:href="#text" opacity="1" fill="#ffffff" />
             </mask>
           </defs>
-          <use x="0" y="0" xlink:href="#text" fill="#1c1c1c" />
+          <use x="0" y="0" xlink:href="#text" fill="#b8f47b" />
           <rect mask="url(#text_mask)" fill="#fff" x="0" :y="sloganMask" width="500" height="440" />
         </svg>
       </div>
@@ -134,9 +134,9 @@ export default {
   &__video {
     position: relative;
     pointer-events: none;
-    padding-bottom: 56.25%;
+    padding-bottom: 69%;
     overflow: hidden;
-    iframe {
+    video {
       position: absolute;
       top: 0;
       left: 0;

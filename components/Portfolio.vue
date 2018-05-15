@@ -2,13 +2,24 @@
   <div class="portfolio" :style="translateY">
     <div class="portfolio__col" v-for="(group, index) in projects" :key="index" :style="colStyle[index]">
       <div v-for="(project, index) in group" :key="index" class="portfolio__link" :style="skewAngle">
-        <nuxt-link :to="'/'+project.name"><img :src="project.img" alt=""></nuxt-link>
+        <nuxt-link :to="'/'+project.name"><img :src="project.img" alt="">
+          <div class="portfolio__desc">
+            <div class="portfolio__year">{{project.data.year}}</div>
+            <div class="portfolio__name">{{project.data.chinese}}</div>
+            <div class="portfolio__tags">{{project.data.tags}}</div>
+          </div>
+        </nuxt-link>
       </div>
-      <div v-if="index == projects.length -1">
-        <a href="mailto:anono1155@gmail.com" class="contactBox">
-          <div class="contactBox__desc">Interested in my works?</div>
-          <div class="contactBox__button">
-            Contact Me : )
+      <div v-if="index == projects.length -1" class="contactBox">
+        <a href="mailto:anono1155@gmail.com">
+          <div class="contactBox__front">
+            <div class="contactBox__desc">Interested in my works?</div>
+            <div class="contactBox__button">
+              Contact Me : )
+            </div>
+          </div>
+          <div class="contactBox__back">
+            Interested in my works?:)
           </div>
         </a>
       </div>
@@ -93,6 +104,7 @@ export default {
 @import "../assets/common";
 
 .portfolio {
+  perspective: 1000px;
   position: relative;
   z-index: 999;
   padding-bottom: 300px;
@@ -110,21 +122,70 @@ export default {
   }
   &__link {
     margin-bottom: 40px;
-    transition: transform 0.15s ease;
     & > a {
       display: block;
       line-height: 0;
+      overflow: hidden;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        left: -50%;
+        top: -50%;
+        border-radius: 50%;
+        transform: scale(0);
+        background: rgba(57, 57, 57, 0.6);
+        transition: transform 0.3s ease;
+      }
     }
+  }
+  &__desc {
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-top: 40px;
+    padding-left: 20px;
+    transition: opacity 0.3s ease;
+    line-height: 1.7;
+    z-index: 1;
+  }
+  &__year {
+    font-size: 14px;
+  }
+  &__name {
+    font-size: 20px;
+    max-width: 165px;
+    font-weight: 600;
+  }
+  &__tags {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
   }
 }
 .contactBox {
-  border: 1px solid #000;
-  padding-bottom: 100%;
-  display: block;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  position: relative;
+  &:hover a {
+    transform: rotateY(180deg);
+  }
+  a {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    padding-bottom: 99%;
+    transition: transform 0.4s ease;
+    border: 1px solid #000;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
   &__desc {
     color: #303030;
     position: absolute;
@@ -143,6 +204,30 @@ export default {
     left: 45px;
     right: 45px;
   }
+  &__front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &__back {
+    border: solid 1px #000000;
+    color: #b8f47b;
+    -webkit-text-stroke: 1px #000;
+    // text-stroke: 1px #000;
+    font-size: 45px;
+    font-weight: 600;
+    padding: 25px 45px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    overflow: hidden;
+  }
 }
 @media only screen and (max-width: 767px) {
   .portfolio {
@@ -156,15 +241,12 @@ export default {
 @media only screen and (min-width: 768px) {
   .portfolio {
     &__link {
-      overflow: hidden;
-      img {
-        opacity: 0.9;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-      }
       &:hover {
-        img {
+        a:after {
+          transform: scale(1);
+        }
+        .portfolio__desc {
           opacity: 1;
-          transform: scale(1.2) rotate(2deg);
         }
       }
     }

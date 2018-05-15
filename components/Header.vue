@@ -163,7 +163,7 @@ export default {
 }
 @media only screen and (max-width: 1200px) {
   .header {
-    height: 50px;
+    height: 80px;
     &__logo {
       left: 0;
     }

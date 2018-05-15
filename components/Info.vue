@@ -6,7 +6,7 @@
         <div>{{category}}</div>
         <div>{{status}}</div>
       </div>
-      <div class="general__body">{{desc}}</div>
+      <div class="general__body" v-html="desc"></div>
     </div>
     <div class="goal" v-if="goals">
       <div class="goal__left goal__title">{ Goal }</div>
@@ -38,6 +38,8 @@ export default {
   }
   &__body {
     text-align: justify;
+    position: relative;
+    z-index: 1;
   }
 }
 .goal {
