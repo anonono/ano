@@ -206,13 +206,9 @@ p {
       max-width: none;
       padding-bottom: 50px;
     }
-    &__right {
-      & > div {
-        display: block;
-      }
-    }
     &__links {
       display: block;
+      position: static;
       margin-bottom: 20px;
       a {
         display: inline-block;

@@ -26,7 +26,7 @@
     </div>
     <div class="kv__right">
       <div class="kv__video" :style="'transform:translateX('+rightStyle+'%)'">
-        <video :style="'transform:translateX('+ -1*rightStyle+'%)'" muted loop autoplay src="/media/index_video.mov"></video>
+        <video playsinline :style="'transform:translateX('+ -1*rightStyle+'%)'" muted loop autoplay src="/media/index_video.mov"></video>
       </div>
     </div>
   </div>
