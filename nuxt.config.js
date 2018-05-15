@@ -5,7 +5,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: 'JOU HSUAN WU - PORTFOLIO',
+    title: 'Jou-Hsuan Wu | Portfolio',
     meta: [{
         charset: 'utf-8'
       },

@@ -17,3 +17,14 @@
     color: #ff7373;
   }
 }
+
+body {
+  position: relative;
+  &:after {
+    content: '';
+    width: 100%;
+    border-bottom: solid 1px #e2e2e2;
+    position: absolute;
+    bottom: 30px;
+  }
+}

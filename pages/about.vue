@@ -12,7 +12,7 @@
         <div class="about__left">
           <div class="about__desc">
             <p>
-              吳柔萱，出生與工作於台北，是一名UI/ UX設計師。接觸UIUX領域大約2年的時間，和多個不同領域的廠商合作過，喜歡咀嚼、吸收再吐出的循環過程，希望能不斷地變得更好。
+              吳柔萱，出生與工作於台北，是一名UI/ UX設計師。接觸UIUX大約2年的時間，和多個不同領域的廠商合作過，喜歡咀嚼、吸收再吐出的循環過程，希望能不斷地變得更好。
             </p>
             <p>
               近期的座右銘是<br/>It always seems impossible until it's done.
@@ -107,25 +107,25 @@ export default {
     -webkit-text-stroke: 1px #1c1c1c;
     margin-bottom: 60px;
   }
-  &__left,
-  &__right {
+  &__left {
+    width: 30%;
     float: left;
-    width: 50%;
   }
   &__right {
-    & > div {
-      display: table;
-      width: 100%;
-    }
+    width: 30%;
+    float: right;
+    position: relative;
+  }
+  &__links {
+    position: absolute;
+    right: 100%;
+    top: 0;
   }
   &__desc {
-    max-width: 300px;
     padding-bottom: 30px;
     text-align: justify;
   }
   &__links {
-    display: table-cell;
-    vertical-align: top;
     padding-right: 40px;
     a {
       color: #d58b8b;
@@ -138,8 +138,6 @@ export default {
     }
   }
   &__img {
-    display: table-cell;
-    vertical-align: top;
     padding-bottom: 50px;
     img {
       width: 100%;
