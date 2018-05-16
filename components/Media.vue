@@ -1,7 +1,8 @@
 <template>
   <div class="video">
-    <!-- <video muted loop autoplay> -->
-    <video muted loop autoplay playsinline :src="video"></video>
+    <div class="video__inner">
+      <video muted loop autoplay playsinline :src="video"></video>
+    </div>
   </div>
 </template>
 
@@ -13,9 +14,48 @@ export default {
 </script>
 <style lang="scss" scoped>
 .video {
-  padding: 100px 0;
+  & + & {
+    margin-top: 100px;
+  }
+  &__inner {
+    padding-bottom: 40%;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+  }
   video {
-    width: 100%;
+    width: 160%;
+    position: absolute;
+    top: 0;
+    left: -30%;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 960px) {
+  .video {
+    &__inner {
+      padding-bottom: 60%;
+      width: 80%;
+    }
+    video {
+      width: 150%;
+      left: -25%;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .video {
+    & + & {
+      margin-top: 50px;
+    }
+    &__inner {
+      padding-bottom: 60%;
+      width: 100%;
+    }
+    video {
+      width: 150%;
+      left: -25%;
+    }
   }
 }
 </style>
