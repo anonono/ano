@@ -26,7 +26,7 @@
               <a href="/jouhsuan_cv.pdf" target="_blank">Resume</a>
               <a href="mailto:anono1155@gmail.com" target="_blank">Email</a>
               <a href="https://www.behance.net/anono115508b4" target="_blank">Behance</a>
-              <a href="www.linkedin.com/in/annwu1155" target="_blank">LinkedIn</a>
+              <a href="https:/www.linkedin.com/in/annwu1155" target="_blank">LinkedIn</a>
             </div>
             <div class="about__img">
               <img src="/images/about.gif" alt="">
