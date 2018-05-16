@@ -39,17 +39,17 @@ export default {
       if (this.progress < this.startPoint) {
         ratio = 2.5;
       } else if (this.progress > this.endPoint) {
-        ratio = 1;
+        ratio = 1.2;
       } else {
         ratio =
           (1 -
             (this.progress - this.startPoint) /
               (this.endPoint - this.startPoint)) *
             1.5 +
-          1;
+          1.2;
       }
       if (this.project) {
-        ratio = 1;
+        ratio = 1.2;
       }
       return { transform: "scale(" + ratio + ")" };
     },
@@ -88,7 +88,7 @@ export default {
   &__logo {
     width: 60px;
     position: absolute;
-    top: 25px;
+    top: 40px;
     left: 120px;
     transform: rotate(330deg);
     z-index: 1000;
@@ -164,19 +164,23 @@ export default {
   .header {
     height: 80px;
     &__logo {
-      left: 0;
+      left: 10px;
     }
     &__about {
-      right: 0;
+      right: -20px;
     }
   }
 }
 @media only screen and (max-width: 768px) {
   .header {
+    &__logo {
+      top: 20px;
+      left: 10px;
+    }
     &__about {
       width: 45px;
       right: -20px;
-      top: 0;
+      top: -2px;
     }
   }
   .aboutImg {
