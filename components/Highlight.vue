@@ -64,7 +64,8 @@ export default {
   }
   &__image {
     line-height: 0;
-    img {
+    img,
+    video {
       width: 100%;
     }
   }
