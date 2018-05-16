@@ -178,14 +178,14 @@ export default {
       left: 10px;
     }
     &__about {
-      width: 45px;
+      width: 60px;
       right: -20px;
-      top: -2px;
+      top: 2px;
     }
   }
   .aboutImg {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     background-image: url("/images/header_about--m.png");
   }
 }

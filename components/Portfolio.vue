@@ -12,15 +12,7 @@
       </div>
       <div v-if="index == projects.length -1" class="contactBox">
         <a href="mailto:anono1155@gmail.com">
-          <div class="contactBox__front">
-            <div class="contactBox__desc">Interested in my works?</div>
-            <div class="contactBox__button">
-              Contact Me : )
-            </div>
-          </div>
-          <div class="contactBox__back">
-            Interested in my works?:)
-          </div>
+          <div class="contactBox__desc">Interested in my works?<br/>:)</div>
         </a>
       </div>
     </div>
@@ -171,62 +163,30 @@ export default {
   }
 }
 .contactBox {
-  &:hover a {
-    transform: rotateY(180deg);
-  }
   a {
-    font-size: 20px;
+    font-size: 45px;
     font-weight: bold;
     position: relative;
     display: block;
     text-decoration: none;
     padding-bottom: 99%;
-    transition: transform 0.4s ease;
     border: 1px solid #000;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
   }
   &__desc {
-    color: #303030;
-    position: absolute;
-    top: 45px;
-    left: 45px;
-    right: 45px;
+    line-height: 1;
     letter-spacing: 1px;
-  }
-  &__button {
-    color: #d58b8b;
-    border: solid 1px #000000;
-    line-height: 55px;
-    text-align: center;
-    position: absolute;
-    bottom: 45px;
-    left: 45px;
-    right: 45px;
-  }
-  &__front {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  &__back {
-    border: solid 1px #000000;
-    color: #b8f47b;
     -webkit-text-stroke: 1px #000;
-    // text-stroke: 1px #000;
-    font-size: 45px;
-    font-weight: 600;
-    padding: 25px 45px;
+    color: #fff;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-    overflow: hidden;
+    padding: 55px 45px;
+    transition: color 0.2s ease;
+  }
+  a:hover &__desc {
+    color: #b8f47b;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -236,6 +196,10 @@ export default {
       margin-left: 0;
       transform: translateY(0) !important;
     }
+  }
+  .contactBox__desc {
+    color: #b8f47b;
+    background: rgba(255, 255, 255, 0.6);
   }
 }
 @media only screen and (min-width: 768px) {
