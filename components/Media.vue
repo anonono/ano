@@ -14,9 +14,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .video {
-  & + & {
-    margin-top: 100px;
-  }
+  margin-bottom: 50px;
+
   &__inner {
     padding-bottom: 40%;
     position: relative;
@@ -45,9 +44,8 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .video {
-    & + & {
-      margin-top: 50px;
-    }
+    margin-bottom: 30px;
+
     &__inner {
       padding-bottom: 60%;
       width: 100%;
