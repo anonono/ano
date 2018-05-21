@@ -9,7 +9,6 @@
       <Double :left=" '/images/udesign-left1.png' " :right=" '/images/udesign-right1.png' "></Double>
       <Single :image=" '/images/udesign-single2.png' "></Single>
       <Double :left=" '/images/udesign-left2.png' " :right=" '/images/udesign-right2.png' "></Double>
-      <Single :image=" '/images/udesign-single2.png' "></Single>
     </div>
     <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'APLUS' " :name=" '艾普拉斯官方網站' "></Navigator>

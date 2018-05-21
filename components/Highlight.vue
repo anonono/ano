@@ -59,6 +59,8 @@ export default {
     font-size: 50px;
   }
   &__desc {
+    font-weight: 600;
+
     margin-bottom: 30px;
     text-decoration: underline;
   }
@@ -68,17 +70,14 @@ export default {
     video {
       width: 100%;
     }
+    video {
+      border-radius: 10px;
+      overflow: hidden;
+    }
   }
   &__content {
     & + & {
       margin-top: 100px;
-    }
-  }
-}
-@media only screen and (max-width: 768px) {
-  .highlight {
-    &__desc {
-      font-weight: 600;
     }
   }
 }

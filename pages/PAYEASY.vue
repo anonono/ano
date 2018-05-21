@@ -9,7 +9,6 @@
       <Double :left=" '/images/payeasy-left1.png' " :right=" '/images/payeasy-right1.png' "></Double>
       <Single :image=" '/images/payeasy-single2.png' "></Single>
       <Double :left=" '/images/payeasy-left2.png' " :right=" '/images/payeasy-right2.png' "></Double>
-      <Single :image=" '/images/payeasy-single2.png' "></Single>
     </div>
     <Highlight :highlights="highlights " :color1="color1 " :color2="color2 "></Highlight>
     <Navigator :next=" 'YUTING' " :name=" '鍾宇婷個人網站' "></Navigator>

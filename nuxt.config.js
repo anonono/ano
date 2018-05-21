@@ -16,7 +16,27 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js project'
+        content: '吳柔萱作品集'
+      },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Jou-Hsuan Wu | Portfolio"
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "http://jouhsuan.com/"
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "http://jouhsuan.com/ogimage.jpg"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "吳柔萱作品集"
       }
     ],
     link: [{

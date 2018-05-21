@@ -2,9 +2,11 @@
   <header class="header">
     <div class="header__logo">
       <nuxt-link to="/">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.69 15.91">
-          <path id="infinity" d="M159,63c-3.05-.09-12.32,3.06-14,4s-9,4-11.22,5a8.17,8.17,0,0,1-8.92-3,6.59,6.59,0,0,1,0-7.43C126,60,130,59,132.3,60.12,135,61,144,66,144,66s5.24,3,7.62,4.52a19.38,19.38,0,0,0,7.43,3c2.95.5,5.68-2.57,5.95-3C166,69,165,66,164,65S162.05,63.09,159,63Z" transform="translate(-122.72 -58.64)" :class="{'active':dashOffset}" />
-        </svg>
+        <div class="header__svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.69 15.91">
+            <path id="infinity" d="M159,63c-3.05-.09-12.32,3.06-14,4s-9,4-11.22,5a8.17,8.17,0,0,1-8.92-3,6.59,6.59,0,0,1,0-7.43C126,60,130,59,132.3,60.12,135,61,144,66,144,66s5.24,3,7.62,4.52a19.38,19.38,0,0,0,7.43,3c2.95.5,5.68-2.57,5.95-3C166,69,165,66,164,65S162.05,63.09,159,63Z" transform="translate(-122.72 -58.64)" :class="{'active':dashOffset}" />
+          </svg>
+        </div>
       </nuxt-link>
     </div>
     <div class="wrap">
@@ -86,21 +88,34 @@ export default {
     height: 100%;
   }
   &__logo {
-    width: 60px;
     position: absolute;
-    top: 40px;
-    left: 120px;
-    transform: rotate(330deg);
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
     z-index: 1000;
     backface-visibility: hidden;
+    a {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
     &:hover {
-      #infinity:hover {
+      #infinity {
         animation: dashoffset 1s ease 1 both;
       }
     }
     svg {
       width: 100%;
     }
+  }
+  &__svg {
+    position: absolute;
+    top: 40px;
+    left: 120px;
+    width: 60px;
+    display: block;
+    transform: rotate(330deg);
   }
   &__about {
     position: relative;
@@ -163,7 +178,7 @@ export default {
 @media only screen and (max-width: 1200px) {
   .header {
     height: 80px;
-    &__logo {
+    &__svg {
       left: 10px;
     }
     &__about {
@@ -173,8 +188,8 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .header {
-    &__logo {
-      top: 20px;
+    &__svg {
+      top: 25px;
       left: 10px;
     }
     &__about {
