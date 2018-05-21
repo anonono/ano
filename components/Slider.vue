@@ -1,17 +1,17 @@
 <template>
   <div class="plan">
-    <div class="plan__left">
-      <div class="plan__title">{ Planning Process }</div>
-      <div class="plan__desc">{{plan}}</div>
-    </div>
+    <div class="plan__title">{ Planning Process }</div>
     <div class="plan__right">
       <no-ssr>
-        <Carousel :per-page="1" :paginationEnabled="false">
+        <Carousel :per-page="1">
           <Slide v-for="(image,index) in slider" :key="index">
             <img :src="image" alt="">
           </Slide>
         </Carousel>
       </no-ssr>
+    </div>
+    <div class="plan__left">
+      <div class="plan__desc">{{plan}}</div>
     </div>
   </div>
 </template>
@@ -42,18 +42,22 @@ export default {
     float: left;
   }
   &__right {
-    width: 60%;
-    float: left;
+    width: 65%;
+    float: right;
     margin-left: 5%;
   }
   &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
     font-size: 20px;
     font-weight: 600;
   }
   &__desc {
+    text-align: justify;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 45px;
     width: 30%;
   }
 }
@@ -64,20 +68,21 @@ export default {
     width: 100%;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .plan {
-    margin-top: 50px;
-
+    padding-bottom: 45px;
     &__left,
     &__right {
       width: 100%;
     }
     &__right {
       margin-left: 0;
-      margin-top: 20px;
+      margin-bottom: 25px;
     }
     &__title {
       margin-bottom: 20px;
+      position: static;
     }
     &__desc {
       position: static;
