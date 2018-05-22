@@ -15,6 +15,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "imagemin": "^5.3.1",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.1.0",
     "nuxt": "^1.4.0",
     "vue-carousel": "^0.7.3"
   },
