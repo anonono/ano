@@ -116,6 +116,7 @@ export default {
 .kv {
   position: relative;
   height: 100vh;
+  padding-top: 130px;
   @include clearfix;
   &__left {
     position: relative;
@@ -150,6 +151,8 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   .kv {
+    padding-top: 80px;
+
     &__left {
       padding-top: 135px;
     }
