@@ -81,7 +81,7 @@ export default {
 @import "../assets/common";
 
 .header {
-  height: 130px;
+  // height: 130px;
   z-index: 1000;
 
   .wrap {
@@ -177,7 +177,7 @@ export default {
 }
 @media only screen and (max-width: 1200px) {
   .header {
-    height: 80px;
+    // height: 80px;
     &__svg {
       left: 10px;
     }
