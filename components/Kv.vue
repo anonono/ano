@@ -126,7 +126,7 @@ export default {
 
   &__right {
     position: absolute;
-    top: 0;
+    top: 130px;
     right: 0;
     width: 70%;
     overflow: hidden;
@@ -158,6 +158,7 @@ export default {
     }
     &__right {
       width: 100%;
+      top: 80px;
     }
   }
 }
