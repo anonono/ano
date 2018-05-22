@@ -21,6 +21,11 @@ export default {
     "window_width",
     "sticky"
   ],
+  data() {
+    return {
+      banner__image: this.image_pc
+    };
+  },
   computed: {
     banner__image() {
       if (this.window_width > 768) {
